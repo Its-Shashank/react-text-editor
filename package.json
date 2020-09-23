@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.5.2",
     "classnames": "^2.2.6",
+    "css-loader": "^4.3.0",
     "fabric": "^4.1.0",
     "filestack-react": "^3.2.1",
     "font-picker-react": "^3.5.2",
