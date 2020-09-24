@@ -279,12 +279,12 @@ class LeftPanel extends React.Component {
       this.setActiveStyle('fontSize', event.target.value);
   }
 
-  setTextColor = (event) => {
+  setTextColor = (color) => {
       this.setState({
-          textColor: event.target.value
+          textColor: color
       })
-      this.changeObjectproperty('fill', event.target.value);
-      ReactDOM.findDOMNode(this.refs.textcolor).style.background = event.target.value;
+      this.changeObjectproperty('fill', color.hex);
+      ReactDOM.findDOMNode(this.refs.textcolor).style.background = color.hex;
   };
 
   setFontFamily = (event) => {
@@ -956,13 +956,24 @@ addFabricCanvas = (json: any) => {
             <div className="selectdiv selectedcolordiv">
               <span className="select-arrow fa fa-chevron-down"></span>
             <span className="currentcolor" ref="textcolor"></span>
-                <select className="selectedColor" onChange={this.setTextColor} value={this.state.textColor}>
+                {/* <select className="selectedColor" onChange={this.setTextColor} value={this.state.textColor}>
             <option value="#2153CC"> #2153CC </option>
             <option value="#CD5C5C"> #CD5C5C </option>
             <option value="#00FF00"> #00FF00 </option>
             <option value="#800000"> #800000 </option>
             <option value="#808000"> #808000 </option>
-            </select>
+            </select> */}
+            {/* <div className="font-color-container">
+              <div className="colrsec" onClick={this.pickerOpen}>
+                <div ref="textcolor" className="primcol textcolpick" />
+                <img className="arrowimg" src={require('../images/down-arrow.png')} alt="" />
+              </div>
+            </div> */}
+            <div>
+              <div />
+              <SketchPicker onChangeComplete={ this.setTextColor } color={this.state.textColor} value={this.state.textColor} />
+            </div>
+            
           </div>
           </Col>
           <Col xs="5" className="px-0 mtextsize mtftool">

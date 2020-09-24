@@ -16,7 +16,7 @@ body {-moz-user-focus: ignore;-moz-user-select: none;-webkit-user-select: none;-
 .header-bar .nav-item {/*line-height: 34px;padding: 10px;border-left: 1px solid #ececec;*/}
 /*.header-bar .nav-item:last-child {padding-right: 0;}*/
 .header-bar .nav-item .nav-link {color: #fff;}
-.left-link .nav-link {color: #fff;font-size: 20px;}
+.left-link .nav-link {color: #000;font-size: 20px;}
 .leftpanelcontent {width: 100%;padding-top: 15px;}
 /*.edit-box h1 {margin: 0;}
 .edit-box {border-bottom: 1px solid #ececec;margin: 0 0px;padding: 10px;min-height: 100px;}*/
@@ -612,7 +612,9 @@ label:active:after {
 
 
 
-.navbar .HighPrint { font-family: Raleway;font-size: 26px; font-weight: normal; font-stretch: normal;font-style: normal;line-height: 1.15;letter-spacing: normal;text-align: left;color: #f76263;}
+.navbar .HighPrint { font-family: Raleway;font-size: 26px; font-weight: normal; font-stretch: normal;font-style: normal;line-height: 1.15;letter-spacing: normal;text-align: left;
+  /* color: #f76263; */
+}
 .navbar .HighPrint .text-style-1 { font-weight: bold;}
 .tabpanel .rwt__tab {width: 82px;height: 82px;border-radius: 6px;-webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);background-color: #fff;padding-left: 0px;padding-right:0;margin-bottom: 15px; /*display: flex;flex-direction: column;*/}
 .tabpanel .rwt__tab[aria-selected="true"], .tabpanel .rwt__tab:hover {background-color: #f76263 !important;}

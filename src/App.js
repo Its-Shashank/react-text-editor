@@ -417,8 +417,13 @@ class App extends Component {
           <Col xl="5" lg="3" md="4" className="p-0">
             <nav className="navbar navbar-expand-lg header-bar">
 
-              <div className="left-link"><a href="{null}" className="nav-link HighPrint"><img src={require('./images/logoIcon.png')} alt="" /><span className="text-style-1">High</span>Print</a></div>
-			  <div className="logoSubtitle"><span>Business-Card-4 x 3 - in</span></div>
+              <div className="left-link">
+                <a href="{null}" className="nav-link HighPrint">
+                  <img src={require('./images/inzacklogo.png')} alt="" />
+                  <span className="text-style-1">INZACK</span>
+                </a>
+              </div>
+			  {/* <div className="logoSubtitle"><span>Business-Card-4 x 3 - in</span></div> */}
             </nav>
           </Col>
 		  
@@ -427,8 +432,8 @@ class App extends Component {
             <nav className="navbar navbar-expand header-bar">
               <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul className="navbar-nav ml-md-auto">
-				         <li className="nav-item active savingTxt"><span>Saving...</span></li>
-                  <li className="nav-item active"> <a className="btn btn-outline-dark headerBtn" href="" ><img src={require('./images/icons/components.svg')} alt="" /> Collaborate </a> </li>
+				         {/* <li className="nav-item active savingTxt"><span>Saving...</span></li> */}
+                  {/* <li className="nav-item active"> <a className="btn btn-outline-dark headerBtn" href="" ><img src={require('./images/icons/components.svg')} alt="" /> Collaborate </a> </li> */}
                   <li className="nav-item active download" > <a className="btn btn-outline-dark headerBtn previewbtn" onClick={this.showPreviewModal}><img src={require('./images/icons/eye.svg')} alt="" /> Preview </a> </li>
                   <Modal isOpen={this.state.previewModal} toggle={this.showPreviewModal}>
                         <ModalHeader toggle={this.showPreviewModal}><a className="headerBtn" onClick={this.showPreviewModal}><img src={require('./images/icons/eye.svg')} alt="" /> Preview </a></ModalHeader>
