@@ -27,6 +27,7 @@ class LeftPanel extends React.Component {
       displaybgColorPicker: false,
       displaygrad1ColorPicker: false,
       displaygrad2ColorPicker: false,
+      displayTextColorPicker: false,
       canvasScale: 1,
       SCALE_FACTOR: 1.2,
       bgcolArray: [],
@@ -286,6 +287,18 @@ class LeftPanel extends React.Component {
       this.changeObjectproperty('fill', color.hex);
       ReactDOM.findDOMNode(this.refs.textcolor).style.background = color.hex;
   };
+
+  textPickerOpen = () => {
+    this.setState({
+      displayTextColorPicker: !this.state.displayTextColorPicker
+    })
+  }
+
+  textPickerClose = () => {
+    this.setState({
+      displayTextColorPicker: false
+    })
+  }
 
   setFontFamily = (event) => {
       this.setState({
@@ -932,6 +945,19 @@ addFabricCanvas = (json: any) => {
           bottom: '0px',
           left: '0px',
         },
+        pickerpopover: {
+          // position: 'absolute',
+          zIndex: 2,
+          top: '40px',
+          left: '282px'
+        },
+        pickercover: {
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          left: 0,
+          bottom: 0
+        }
       };
       return (
        <div className="leftpanelcontent">
@@ -954,26 +980,16 @@ addFabricCanvas = (json: any) => {
         <Row className="mx-0">
           <Col xs="7" className="px-0 mtextcolor mtftool">
             <div className="selectdiv selectedcolordiv">
-              <span className="select-arrow fa fa-chevron-down"></span>
-            <span className="currentcolor" ref="textcolor"></span>
-                {/* <select className="selectedColor" onChange={this.setTextColor} value={this.state.textColor}>
-            <option value="#2153CC"> #2153CC </option>
-            <option value="#CD5C5C"> #CD5C5C </option>
-            <option value="#00FF00"> #00FF00 </option>
-            <option value="#800000"> #800000 </option>
-            <option value="#808000"> #808000 </option>
-            </select> */}
-            {/* <div className="font-color-container">
-              <div className="colrsec" onClick={this.pickerOpen}>
-                <div ref="textcolor" className="primcol textcolpick" />
-                <img className="arrowimg" src={require('../images/down-arrow.png')} alt="" />
+              <div className="font-color-container">
+                <div className="colrsec" onClick={this.textPickerOpen}>
+                  <div ref="textcolor" className="primcol textcolpick" />
+                  <img className="arrowimg" src={require('../images/down-arrow.png')} alt="" />
+                </div>
               </div>
-            </div> */}
-            <div>
-              <div />
-              <SketchPicker onChangeComplete={ this.setTextColor } color={this.state.textColor} value={this.state.textColor} />
-            </div>
-            
+              { this.state.displayTextColorPicker && <div style={styles.pickerpopover}>
+                <div style={styles.pickercover} onClick={this.textPickerClose} />
+                <SketchPicker onChangeComplete={ this.setTextColor } color={this.state.textColor} value={this.state.textColor} />
+              </div>}
           </div>
           </Col>
           <Col xs="5" className="px-0 mtextsize mtftool">
